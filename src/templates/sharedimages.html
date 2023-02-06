@@ -30,37 +30,35 @@
               </div>
               <ul class="nav navbar-nav">
                 <li><a href="/dashboard">Home</a></li>
-                <li class="active"><a href="/myImages">My Images</a></li>
+                <li><a href="/myImages">My Images</a></li>
                 <li><a href="/shareImage">Share Image</a></li>
                 <li><a href="/mysharedimages">My Shared Images</a></li>
-                <li><a href="/sharedImages">Shared Images</a></li>
+                <li class="active"><a href="/sharedImages">Shared Images</a></li>
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </div>
           </nav>
           <br/><br/>
-          <h3 style="text-align: center;">My Images</h3>
+          <h3>Shared Images</h3>
           <br/><br/>
           <div class="row">
-                {%for i in range(0, len)%}
-                    <div class="col-md-4">
-                    <center>
-                        <img src={{dashboard_data[i][0]}} height="250" width="250">
-                    </center>
-                    </div>
-                    {%if (i+1)%3==0 %}
-                        </div> <br/>
-                        <div class="row">
-                    {%endif%}
-                {%endfor%}
-                
-          </div>
-          <br/><br/>
-    </div>
-
-          
-
-
+            {%for i in range(0, len)%}
+                <div class="col-md-4">
+                <center>
+                    <p>Sent by: <span style="color:red">{{dashboard_data[i][0]}}</span></p>
+                    <img src={{dashboard_data[i][1]}} height="250" width="250">
+                </center>
+                </div>
+                {%if (i+1)%3==0 %}
+                    </div> <br/>
+                    <div class="row">
+                {%endif%}
+            {%endfor%}
+            
+      </div>
+      <br/><br/>
+         
+        
 
 		
 	</div>

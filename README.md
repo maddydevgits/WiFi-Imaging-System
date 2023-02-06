@@ -29,4 +29,19 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 12. Create dashboard page ✔️
 13. Upload Images to Folder ✔️
 14. Create MyImages Page ✔️
-15. Create Share Image ✖️
+15. Create Share Image ✔️
+16. Create Shared Images ✔️
+17. Create MyShared Images ✔️
+18. Create Logout Page ✔️
+19. Test the Logic ✔️
+20. Final Demo ✔️
+
+# Execution Process
+1. Clone the Repo
+2. Launch Ganache
+3. Migrate Smart Contracts
+4. Run python src/app.py
+5. Register and Login and access the dashboard
+
+# Questions
+For questions, you can reach me on <a href="https://linkedin.com/in/MadhuPIoT">LinkedIn</a> 
