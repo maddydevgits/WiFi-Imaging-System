@@ -23,6 +23,18 @@ app=Flask(__name__)
 def homepage():
     return render_template('index.html')
 
+@app.route('/loginForm',methods=['post'])
+def loginForm():
+    walletaddr=request.form['walletaddr']
+    password=request.form['password']
+    print(walletaddr,password)
+    contract,web3=connect_with_register(0)
+    status=contract.functions.loginUser(walletaddr,int(password)).call()
+    if status==True:
+        return render_template('index.html',res2="login validated")
+    else:
+        return render_template('index.html',err2="Invalid Credentials")
+
 @app.route('/registerForm',methods=['post'])
 def registerForm():
     walletaddr=request.form['walletaddr']

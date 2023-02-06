@@ -38,13 +38,17 @@
 				<input type="text"
 					class="email ele"
 					placeholder="Enter your wallet address"
-                    name="walletaddr"> <br/><br/>
+                    name="walletaddr"
+                    required=""> <br/><br/>
 				<input type="password"
 					class="password ele"
 					placeholder="password"
-                    name="password"><br/><br/>
+                    name="password"
+                    required=""><br/><br/>
 				<button type="submit" class="clkbtn">Login</button>
                 </form>
+                <span style="color:green">{{res2}}</span>
+                <span style="color:red">{{err2}}</span>
 			</div>
 
 			<!-- signup form -->
