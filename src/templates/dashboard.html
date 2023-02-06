@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width,
+						initial-scale=1.0">
+	<title>WiFi Imaging System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}">
+</head>
+
+<body>
+	<header>
+		<h1 class="heading">WiFi Imaging System</h1>
+		<h3 class="title">Dashboard | Imaging System</h3>
+	</header>
+
+	<!-- container div -->
+	<div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">WiFi Imaging System</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="/myImages">My Images</a></li>
+                <li><a href="/shareImage">Share Image</a></li>
+                <li><a href="/sharedImages">Shared Images</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </nav>
+          <br/><br/>
+          <h3>Upload your Images to protect from explicit usage</h3>
+          <br/><br/>
+          <form action="/uploadImage" method="POST" enctype="multipart/form-data">
+            <div class="file-upload">
+                <div class="file-select">
+                    <div class="file-select-button" id="fileName">Choose File</div>
+                    <div class="file-select-name" id="noFile">No file chosen...</div> 
+                    <input type="file" name="chooseFile" id="chooseFile">
+                </div>
+            </div> <br/>
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </form>
+
+
+
+		
+	</div>
+	<script src="{{url_for('static',filename='index.js')}}"></script>
+</body>
+
+</html>

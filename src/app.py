@@ -1,6 +1,8 @@
 from flask import Flask,render_template,redirect,request,session
 import json
 from web3 import Web3, HTTPProvider
+from werkzeug.utils import secure_filename
+import os
 
 def connect_with_register(acc):
     blockchain="http://127.0.0.1:7545"
@@ -18,10 +20,20 @@ def connect_with_register(acc):
 
 
 app=Flask(__name__)
+app.secret_key='batch16sacet'
 
 @app.route('/')
 def homepage():
     return render_template('index.html')
+
+@app.route('/dashboard')
+def dashboardpage():
+    return render_template('dashboard.html')
+
+@app.route('/logout')
+def logout():
+    session['username']=None
+    return redirect('/')
 
 @app.route('/loginForm',methods=['post'])
 def loginForm():
@@ -31,7 +43,8 @@ def loginForm():
     contract,web3=connect_with_register(0)
     status=contract.functions.loginUser(walletaddr,int(password)).call()
     if status==True:
-        return render_template('index.html',res2="login validated")
+        session['username']=walletaddr
+        return redirect('/dashboard')
     else:
         return render_template('index.html',err2="Invalid Credentials")
 
@@ -47,6 +60,14 @@ def registerForm():
         return render_template('index.html',res="Registered")
     except:
         return render_template('index.html',err="Already Registered")
+
+@app.route('/uploadImage',methods=['post','get'])
+def uploadImage():
+    doc=request.files['chooseFile']
+    if session['username'] not in os.listdir():
+        os.mkdir(session['username'])
+    doc1=secure_filename(doc.filename)
+    doc.save(session['username']+'/'+doc1)
 
 if (__name__=="__main__"):
     app.run(debug=True,host='0.0.0.0',port=5001)
