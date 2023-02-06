@@ -8,13 +8,13 @@
 						initial-scale=1.0">
 	<title>WiFi Imaging System</title>
 	<link rel="stylesheet"
-		href="style.css">
+		href="{{url_for('static',filename='style.css')}}">
 </head>
 
 <body>
 	<header>
-		<h1 class="heading">GeeksforGeeks</h1>
-		<h3 class="title">Sliding Login & Registration Form</h3>
+		<h1 class="heading">WiFi Imaging System</h1>
+		<h3 class="title">Login & Registration Form</h3>
 	</header>
 
 	<!-- container div -->
@@ -34,34 +34,37 @@
 
 			<!-- login form -->
 			<div class="login-box">
-				<input type="email"
+                <form action="/loginForm" method="post">
+				<input type="text"
 					class="email ele"
-					placeholder="youremail@email.com">
+					placeholder="Enter your wallet address"
+                    name="walletaddr"> <br/><br/>
 				<input type="password"
 					class="password ele"
-					placeholder="password">
-				<button class="clkbtn">Login</button>
+					placeholder="password"
+                    name="password"><br/><br/>
+				<button type="submit" class="clkbtn">Login</button>
+                </form>
 			</div>
 
 			<!-- signup form -->
 			<div class="signup-box">
+                <form action="/registerForm" method="post">
 				<input type="text"
 					class="name ele"
-					placeholder="Enter your name">
-				<input type="email"
-					class="email ele"
-					placeholder="youremail@email.com">
+					placeholder="Enter your Wallet Address"
+                    name="walletaddr" required=""><br/><br/>
 				<input type="password"
 					class="password ele"
-					placeholder="password">
-				<input type="password"
-					class="password ele"
-					placeholder="Confirm password">
-				<button class="clkbtn">Signup</button>
+					placeholder="password"
+                    name="password" required=""><br/><br/>
+				<button type="submit" class="clkbtn">Signup</button>
+                </form>
+                <span style="color:green">{{res}}</span>
 			</div>
 		</div>
 	</div>
-	<script src="index.js"></script>
+	<script src="{{url_for('static',filename='index.js')}}"></script>
 </body>
 
 </html>
