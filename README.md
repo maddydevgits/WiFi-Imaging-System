@@ -15,4 +15,5 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 3. flask
 
 # Process
-1. Create Smart Contract for register :x:
+1. Create Smart Contract for register ✔️
+2. Create Smart Contract for images ✖️
