@@ -27,4 +27,5 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 10. Store it in Block ✔️
 11. Create a Route for Login and Collect data ✔️
 12. Create dashboard page ✔️
-13. Upload Images to Folder ✖️
+13. Upload Images to Folder ✔️
+14. Create MyImages Page ✖️

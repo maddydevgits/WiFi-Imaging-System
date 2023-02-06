@@ -21,6 +21,7 @@ def connect_with_register(acc):
 
 app=Flask(__name__)
 app.secret_key='batch16sacet'
+app.config["UPLOAD_FOLDER"] = "uploads/"
 
 @app.route('/')
 def homepage():
@@ -68,6 +69,7 @@ def uploadImage():
         os.mkdir(session['username'])
     doc1=secure_filename(doc.filename)
     doc.save(session['username']+'/'+doc1)
+    return (render_template('dashboard.html',res='image uploaded'))
 
 if (__name__=="__main__"):
     app.run(debug=True,host='0.0.0.0',port=5001)
