@@ -21,7 +21,7 @@ def connect_with_register(acc):
 
 app=Flask(__name__)
 app.secret_key='batch16sacet'
-app.config["UPLOAD_FOLDER"] = "uploads/"
+app.config["UPLOAD_FOLDER"] = "static/uploads/"
 
 @app.route('/')
 def homepage():
@@ -65,11 +65,23 @@ def registerForm():
 @app.route('/uploadImage',methods=['post','get'])
 def uploadImage():
     doc=request.files['chooseFile']
-    if session['username'] not in os.listdir():
-        os.mkdir(session['username'])
+    if session['username'] not in os.listdir(app.config['UPLOAD_FOLDER']):
+        os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], session['username']))
     doc1=secure_filename(doc.filename)
-    doc.save(session['username']+'/'+doc1)
+    doc.save(os.path.join(app.config['UPLOAD_FOLDER'], session['username']+'/'+doc1))
     return (render_template('dashboard.html',res='image uploaded'))
+
+@app.route('/myImages')
+def myimages():
+    k=os.listdir(os.path.join(app.config['UPLOAD_FOLDER'], session['username']))
+    print(k)
+    data=[]
+    for i in k:
+        dummy=[]
+        dummy.append(os.path.join(app.config['UPLOAD_FOLDER'], session['username'])+'/'+i)
+        data.append(dummy)
+    print(data)
+    return render_template('myimages.html',dashboard_data=data,len=len(data))
 
 if (__name__=="__main__"):
     app.run(debug=True,host='0.0.0.0',port=5001)
