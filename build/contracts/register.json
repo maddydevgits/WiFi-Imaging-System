@@ -35,7 +35,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -59,7 +60,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"username\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"password\",\"type\":\"uint256\"}],\"name\":\"loginUser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"username\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"password\",\"type\":\"uint256\"}],\"name\":\"registerUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewUsers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/register.sol\":\"register\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/register.sol\":{\"keccak256\":\"0xd31002a6751a739c55a6fbe1d812fb1570f485bab53f250426657d09ac90b4a9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://09d88c4befcac4b18bb17bf4d1d26d454266188de09be81c72b08a13065a2bbb\",\"dweb:/ipfs/Qmb5VWZCu3pSzN9oTE7RbEHdPMsFu7StZPNGb4P3mPs7Sy\"]}},\"version\":1}",
@@ -4578,9 +4580,17 @@
     "name": "solc",
     "version": "0.8.15+commit.e14f2714.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x9E9cF082B90f104Ee820EF07E81db00b1f37B1d5",
+      "transactionHash": "0x38adc05ae36df7b848019296fec04cf31a735beb799ecbf587dd9c7f9fb8855e"
+    }
+  },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-02-06T08:58:05.162Z",
+  "updatedAt": "2023-02-06T09:07:57.490Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
