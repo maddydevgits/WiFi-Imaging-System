@@ -13,6 +13,7 @@ contract register {
 
     _users.push(username);
     _passwords.push(password);
+    users[username]=true;
   }
 
   function viewUsers() public view returns(address[] memory,uint[] memory) {

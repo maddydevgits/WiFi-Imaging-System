@@ -16,4 +16,5 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 
 # Process
 1. Create Smart Contract for register ✔️
-2. Create Smart Contract for images ✖️
+2. Create Smart Contract for images ✔️
+3. Compile Smart Contracts ✖️
