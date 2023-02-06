@@ -24,4 +24,5 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 7. Create Register HTML Page ✔️
 8. Create a Route for Register ✔️
 9. Collect Data from Form ✔️
-10. Store it in Block ✖️
+10. Store it in Block ✔️
+11. Create a Route for Login and Collect data ✖️
