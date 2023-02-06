@@ -22,4 +22,5 @@ WiFi Imaging System is a project on Blockchain which we have to protect images o
 5. Create Migration Scripts for image ✔️
 6. Migrate onto the Ganache ✔️
 7. Create Register HTML Page ✔️
-8. Create a Route for Register ✖️
+8. Create a Route for Register ✔️
+9. Collect Data from Form ✖️
